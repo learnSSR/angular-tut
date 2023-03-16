@@ -6,6 +6,7 @@ import { Directive, ElementRef, HostListener, HostBinding ,Input} from '@angular
 export class HostlistenerDirective {
   @HostBinding('style.backgroundColor') color1:string;
   @Input() borderColor: string='green';
+  @Input() borderWidth: number=1;
   constructor(private ele: ElementRef ) {
     
    }
@@ -21,6 +22,6 @@ export class HostlistenerDirective {
    // this.ele.nativeElement.style.backgroundColor = 'yellow'
    console.log(this.color1)
     this.color1 = 'yellow'
-    this.ele.nativeElement.style.border = `2px dashed ${this.borderColor}` 
+    this.ele.nativeElement.style.border = `${this.borderWidth}px dashed ${this.borderColor}` 
   }
 }
